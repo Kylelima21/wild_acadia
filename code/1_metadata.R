@@ -15,7 +15,6 @@ require(tidyverse)
 require(dplyr)
 require(googlesheets4)
 
-
 select <- dplyr::select
 
 
