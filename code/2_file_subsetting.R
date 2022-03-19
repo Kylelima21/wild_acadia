@@ -40,23 +40,24 @@ unique(wa.meta$priority)
 wa.meta.p <- wa.meta %>% 
   filter(priority!="ignore" & priority!="low")
 
+
 #Create a file list to pass through our purrr loop
-wa.files <- wa.meta.p %>% 
+wa.path <- wa.meta.p %>% 
   select(path)
 
-#Set google drive output location
-drive.output <- "https://drive.google.com/drive/u/4/folders/1rUoHnUILQS0Gs1kw-faf3cyqixVWBQYQ"
 
-#Make a function that will upload a file to google drive
-upload <- function(x){
-  drive_upload(x, path = paste0("wild_acadia/data/", x))
+#Make a function that will zip the files of priority to be uploaded to google drive
+zipit <- function(x) {
+  zip(zipfile = 'data/raw/prioritydata', files = x)
 }
 
-#Upload every file to google drive
-map(wa.files, ~upload(.))
+#Create zip file
+#map(wa.path, ~zipit(.))
+
+#Unzip and manually bring into Google Drive
+#unzip("data/raw/prioritydata.zip", exdir = "data/raw/")
 
 
-drive_upload(wa.files, path = paste0("wild_acadia/data/", x))
 
 
 
@@ -69,7 +70,7 @@ drive_upload(wa.files, path = paste0("wild_acadia/data/", x))
 # #Create your function that performs the tasks you desire
 # maybeso <- function(x){
 #   file_1 <- read.csv(x, header = TRUE)
-#   file_2 <- file_1 %>% 
+#   file_2 <- file_1 %>%
 #     select(-1)
 #   write_csv(file_2, paste(x, '.csv', sep=''))
 # }
