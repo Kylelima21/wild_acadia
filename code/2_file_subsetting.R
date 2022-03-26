@@ -51,15 +51,22 @@ zipit <- function(x) {
   zip(zipfile = 'data/raw/prioritydata', files = x)
 }
 
-#Create zip file
-#map(wa.path, ~zipit(.))
+# ##Commented out to not duplicate efforts if the script is run again
+# ##The created files are storedin and will be accessed through Google Drive
+# #Create zip file
+# map(wa.path, ~zipit(.))
+# 
+# #Unzip and manually bring into Google Drive
+# unzip("data/raw/prioritydata.zip", exdir = "data/raw/")
 
-#Unzip and manually bring into Google Drive
-#unzip("data/raw/prioritydata.zip", exdir = "data/raw/")
 
 
 
 
+
+
+###This code is not required for this script,
+###but rather can be used as reference fro creating purrr loops
 
 
 # ##Example using purrr to loop a function to all files in a folder

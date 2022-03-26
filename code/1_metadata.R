@@ -286,7 +286,7 @@ wild_acadia_metadata <- wild_acadia_metadata %>% rename('size (B)'='size')
 ####         Write out final metadata         ####
 #------------------------------------------------#
 
-##Run this line to produce a google sheet
-##Will need to let tidyverse access your account
-#(ss <- gs4_create("wild_acadia_metadata", sheets = wild_acadia_metadata))
+# #Run this line to produce a google sheet
+# #Will need to let tidyverse access your account
+# (ss <- gs4_create("wild_acadia_metadata", sheets = wild_acadia_metadata))
 
