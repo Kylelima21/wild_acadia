@@ -1,0 +1,125 @@
+---
+title: "Wild Acadia Data Cleaning Summary"
+author: "Kyle Lima - Schoodic Institute at Acadia National Park"
+date: "5/4/2022"
+output: 
+  html_document:
+    theme: readable
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<br>
+
+# Summary
+
+Following the Data Assessment statement of work created as an agreement between Wild Acadia and Schoodic Institute at Acadia National Park, we have completed the outlined objectives:
+
+1. A full metadata file for all data streams included in this work that includes the file name, path, and extension.
+2. The processed and cleaned data
+3. R Scripts that perform the data cleaning process
+4. A guide and recommendation for future data management
+5. A Google Drive directory containing all of these deliverables as well as this report
+
+<br>
+<br>
+
+
+### 1. Creating Metadata
+
+Metadata files were created in R. We were able to use the `dir()` function to read the contents of each data directory. We could then manipulate this output to produce the required columns for the comprehensive metadata file that can be found in the main directory of the digital directory containing all final products. We also created an additional metadata file that describes all of the newly created datasets. This file can be found with the processed data in the digital directory.
+
+<br>
+<br>
+
+
+### 2. Processing and cleaning the data
+
+There were 19 final produced files. Here we list each file and describe what was done to the file to create the final produced version. The order follows that of the processed data metadata.
+
+1. Sentinel_and_RAM_species_data_2011-2019.csv
+  - We checked to ensure this file was properly formatted, and then wrote the file into the processed data directory.
+2. Sentinel_and_USA-RAM_Sites.csv
+  - We checked to ensure this file was properly formatted, and then wrote the file into the processed data directory.
+3. well_prec_data_2013-2018_processed20220326.csv
+  - We tested this file with Kate Miller's wetlandACAD functions, and produced a file that is now properly formatted to be used with these functions. 
+  - This was run using the R script "3_data_manipulation."
+4. discharge_alldata_20220402.csv
+  - Here we compiled the data from the three different meter types located in the "individual measurements" folder in "Data_HYD/Discharge."
+  - The final output includes the site and site code, observers, date and time, meter type, the total area and discharge values, and comments if there were any. 
+  - To perform this, it had to be done by hand as the outputs from the meter were not readable by Program R.
+  - Final cleaning was performed in R
+5. CBPstage_rawdata_20220326.xlsx
+  - We first compiled separate datasheets for each site specific-stage data.
+  - This had to be done by hand as the raw data were not reabable by R.
+6. CBSstage_rawdata_20220326.xlsx
+  - We first compiled separate datasheets for each site specific-stage data.
+  - This had to be done by hand as the raw data were not reabable by R.
+7. DBstage_rawdata_20220326.xlsx
+  - We first compiled separate datasheets for each site specific-stage data.
+  - This had to be done by hand as the raw data were not reabable by R.
+8. JSstage_rawdata_20220326.xlsx
+  - We first compiled separate datasheets for each site specific-stage data.
+  - This had to be done by hand as the raw data were not reabable by R.
+9. MBstage_rawdata_20220326.xlsx
+  - We first compiled separate datasheets for each site specific-stage data.
+  - This had to be done by hand as the raw data were not reabable by R.
+10. SBstage_rawdata_20220326.xlsx
+  - We first compiled separate datasheets for each site specific-stage data.
+  - This had to be done by hand as the raw data were not reabable by R.
+11. total_stagedata_20220326.csv
+  - Then we compiled all of these site-specific datasets into one comprehensive file using program R.
+  - Column names match that of the parent access database.
+  - This data contains the site, station, device, timestamp, stage, and rain data.
+12. total_stagesensorstatus_20220326.csv
+  - This dataset is the pair for the total stage data, with all the information for the data collection devices.
+  - This contains the site, station, timestamp, stop time, status, len, and notes.
+13. bacteria_cromwellharbor_20220416.csv
+  - These data were not able to be read into R due to the output formatting, so we compiled it by hand.
+  - This file is the cleaned version of the Cromwell Harbor Old_New.xlsx
+14. bacteria_fieldparameters_20180628.csv
+  - These data were not able to be read into R due to the output formatting, so we compiled it by hand.
+  - This is the compilation of the bacteria data field parameters, formatted and cleaned to be used in the future.
+15. bacteria_results_2017.csv
+  - These data were not able to be read into R due to the output formatting, so we compiled it by hand.
+  - This is the compilation of the bacteria results data, formatted and cleaned to be used in the future.
+16. bacteria_EXOexport_20180914.csv
+  - These data were not able to be read into R due to the output formatting, so we compiled it by hand.
+  - This is the comprehensive file for the files within the "EXO Exports" folder.
+17. bacteriaresults_MDIBL_2018.csv
+  - These data were not able to be read into R due to the output formatting, so we compiled it by hand. 
+  - This file is the cleaned version of the files in the "From MDIBL" directory.
+18. paramaters_CBP_CBS_20220412.csv
+  - These data were not able to be read into R due to the output formatting, so we compiled it by hand.
+  - We collected the various parameters taken for each site into one file.
+19. stormsurge_alldata_20220326.csv
+  - We compiled the three excel files into one long dataset.
+
+<br>
+<br>
+
+
+### 3. R Scripts
+
+All R scripts used to clean the data and produce metadata are included in the "scripts" directory in the digital directory.
+
+<br>
+<br>
+
+
+### 4. Data management guide
+
+We have compiled a guide for future data management for your benefit. Within this document are recommendations for datasheet formatting, data directory organization, and data storage conventions. These are the same data management guidelines that Schoodic Institutes follows. This report can be located in the "outputs" subdirectory of the digital directory provided.
+
+<br>
+<br>
+
+
+### 5. Google Drive digital directory
+
+All of these files, data, and guides are located within this Google Drive directory we have provided. This directory is broken down into three main sections: data, outputs, and scripts. The data subdirectory contains all the raw and processed data in their original path from the directories that Wild Acadia provided us at the start of this project. Next, the outputs subdirectory holds the data management guide for working with and storing data, informed by Schoodic Institute's methods, and this report. Finally, the scripts subdirectory is home to the R scripts used to clean the data and create the metadata files.
+
+<br>
+<br>

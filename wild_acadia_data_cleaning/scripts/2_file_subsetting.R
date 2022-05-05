@@ -1,8 +1,4 @@
-#Wild Acadia data cleaning project
-#Schoodic Institute at Acadia National Park
-#Kyle Lima, Spring 2022
-
-
+#!/usr/bin/env Rscript --vanilla
 
 #------------------------------------------------#
 ####           Packages Required              ####

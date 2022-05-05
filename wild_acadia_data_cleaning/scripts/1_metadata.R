@@ -1,11 +1,9 @@
-#Wild Acadia data cleaning project
-#Schoodic Institute at Acadia National Park
-#Kyle Lima, Spring 2022
+#!/usr/bin/env Rscript --vanilla
 
 
 ##IMPORTANT
 ##In order to run this code you have to download zipped files from Google Drive and place in the directory 
-#on your computer.
+#on your local computer.
 
 
 
